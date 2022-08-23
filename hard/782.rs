@@ -17,10 +17,10 @@ impl Solution {
                     .enumerate()
                     .filter(|&(e, &n)| n == e as i32 % 2)
                     .count();
-                let num = match m {
-                    t if t == n - 1 => len - n1,
-                    t if t == n => len - n1.max(n0),
-                    t if t == n + 1 => len - n0,
+                let num = match m - n {
+                    -1 => len - n1,
+                    0 => len - n1.max(n0),
+                    1 => len - n0,
                     _ => 0,
                 };
                 return num as i32 / 2;
