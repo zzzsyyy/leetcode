@@ -1,4 +1,4 @@
-impl Solution {
+/* impl Solution {
     pub fn max_chunks_to_sorted(arr: Vec<i32>) -> i32 {
         let (mut tmp1, mut tmp2) = (0, 0);
         let mut cnt = 0;
@@ -10,5 +10,18 @@ impl Solution {
             }
         }
         cnt
+    }
+}
+*/
+
+impl Solution {
+    pub fn max_chunks_to_sorted(arr: Vec<i32>) -> i32 {
+        let mut mask = 0;
+        (0..arr.len())
+            .filter(|&i| {
+                mask |= 1 << arr[i];
+                (mask & (mask + 1)) == 0
+            })
+            .count() as i32
     }
 }
