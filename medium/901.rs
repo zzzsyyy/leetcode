@@ -4,7 +4,7 @@ struct StockSpanner {
 
 impl StockSpanner {
     fn new() -> Self {
-        StockSpanner { prices: Vec::new() }
+        Self { prices: Vec::new() }
     }
 
     fn next(&mut self, price: i32) -> i32 {
