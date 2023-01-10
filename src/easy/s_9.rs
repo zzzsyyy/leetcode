@@ -1,5 +1,7 @@
+struct Solution;
+
 impl Solution {
-    pub fn is_palindrome(x: i32) -> bool {
+    pub fn is_palindrome_1(x: i32) -> bool {
         if x<0{return false}
         let mut x = x;
         let num = x;
@@ -28,3 +30,16 @@ impl Solution {
 
 //反转数字的一半，直接来可能超出`i32::MAX`
 
+#[cfg(test)]
+mod test{
+    use super::*;
+    #[test]
+    fn test_9(){
+        assert_eq!(Solution::is_palindrome(121), true);
+        assert_eq!(Solution::is_palindrome(-121), false);
+        assert_eq!(Solution::is_palindrome(10), false);
+        assert_eq!(Solution::is_palindrome_1(121), true);
+        assert_eq!(Solution::is_palindrome_1(-121), false);
+        assert_eq!(Solution::is_palindrome_1(10), false);
+    }
+}

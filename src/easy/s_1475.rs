@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn final_prices(prices: Vec<i32>) -> Vec<i32> {
         let mut ret = vec![0; prices.len()];
@@ -14,5 +16,14 @@ impl Solution {
             stk.push(n);
         }
         ret
+    }
+}
+
+#[cfg(test)]
+mod test{
+    use super::*;
+    #[test]
+    fn test_1475(){
+        assert_eq!(Solution::final_prices(vec![8,4,6,2,3]), vec![4,2,4,2,3]);
     }
 }

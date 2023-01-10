@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn check_permutation(s1: String, s2: String) -> bool {
         let mut s2:Vec<char>=s2.chars().collect();
@@ -5,5 +7,13 @@ impl Solution {
         s1.sort();
         s2.sort();
         return s1==s2;
+    }
+}
+
+#[cfg(test)]
+mod test{
+    #[test]
+    fn test_01_02(){
+        unimplemented!()
     }
 }

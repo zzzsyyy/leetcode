@@ -1,3 +1,6 @@
+struct Solution;
+
+use crate::utils::tree_node::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 impl Solution {
@@ -8,5 +11,16 @@ impl Solution {
         } else {
             0
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let root = tree![3, 9, 20, null, null, 15, 7];
+        assert_eq!(Solution::max_depth(root), 3);
     }
 }

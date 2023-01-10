@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn missing_two(nums: Vec<i32>) -> Vec<i32> {
         let mut t = 0_i32;
@@ -20,5 +22,16 @@ impl Solution {
             }
         }
         return vec![s, s ^ t];
+    }
+}
+
+#[cfg(test)]
+mod test{
+    use super::Solution;
+    #[test]
+    fn test_17_19(){
+        let nums = vec![1,2,4];
+        let ans = vec![3,5];
+        assert_eq!(Solution::missing_two(nums),ans);
     }
 }

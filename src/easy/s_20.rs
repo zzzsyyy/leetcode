@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn is_valid(s: String) -> bool {
         let mut vec = Vec::new();
@@ -18,5 +20,15 @@ impl Solution {
             }
         }
         vec.is_empty()
+    }
+}
+
+#[cfg(test)]
+mod test{
+    use super::*;
+    #[test]
+    fn test_20(){
+        assert_eq!(Solution::is_valid("()[]{}".to_string()), true);
+        assert_eq!(Solution::is_valid("(".to_string()), false);
     }
 }

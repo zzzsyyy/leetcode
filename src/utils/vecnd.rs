@@ -1,3 +1,4 @@
+#[macro_export]
 macro_rules! vecnd {
     ($([$($inner:tt)*]),+ $(,)?) => {
         vec![$(
