@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn count_students(students: Vec<i32>, sandwiches: Vec<i32>) -> i32 {
         let len = students.len();
@@ -10,5 +12,15 @@ impl Solution {
             cnt[v as usize] -= 1
         }
         0
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_1700(){
+        assert_eq!(Solution::count_students(vec![1,1,0,0],vec![0,1,0,1]),0);
+        assert_eq!(Solution::count_students(vec![1,1,1,0,0,1],vec![1,0,0,0,1,1]),3);
     }
 }

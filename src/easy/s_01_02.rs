@@ -12,8 +12,10 @@ impl Solution {
 
 #[cfg(test)]
 mod test{
+    use super::*;
     #[test]
     fn test_01_02(){
-        unimplemented!()
+        assert_eq!(Solution::check_permutation("abc".to_string(),"bca".to_string()),true);
+        assert_eq!(Solution::check_permutation("abc".to_string(),"bad".to_string()),false);
     }
 }

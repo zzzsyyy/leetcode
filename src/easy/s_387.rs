@@ -1,3 +1,5 @@
+struct Solution;
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -10,5 +12,14 @@ impl Solution {
             }
         }
         -1
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_387(){
+        assert_eq!(Solution::first_uniq_char("leetcode".to_string()),0);
     }
 }

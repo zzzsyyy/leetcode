@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn reformat_number(number: String) -> String {
         let mut ret = number
@@ -21,5 +23,14 @@ impl Solution {
             }
         }
         ret
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_1694(){
+        assert_eq!(Solution::reformat_number("1-23-45 6".to_string()),"123-456".to_string());
     }
 }

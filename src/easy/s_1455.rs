@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn is_prefix_of_word(sentence: String, search_word: String) -> i32 {
         let len = search_word.len();
@@ -11,5 +13,14 @@ impl Solution {
             }
         }
         return -1;
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_1455(){
+        assert_eq!(Solution::is_prefix_of_word("i love eating burger".to_string(),"burg".to_string()),4);
     }
 }

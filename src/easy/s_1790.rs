@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn are_almost_equal(s1: String, s2: String) -> bool {
         if s1.eq(&s2) {
@@ -18,5 +20,17 @@ impl Solution {
             }
         }
         cnt == 2
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_1790(){
+        assert_eq!(Solution::are_almost_equal("bank".to_string(),"kanb".to_string()),true);
+        assert_eq!(Solution::are_almost_equal("attack".to_string(),"defend".to_string()),false);
+        assert_eq!(Solution::are_almost_equal("kelb".to_string(),"kelb".to_string()),true);
+        assert_eq!(Solution::are_almost_equal("abcd".to_string(),"dcba".to_string()),false);
     }
 }

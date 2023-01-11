@@ -1,3 +1,5 @@
+struct Solution;
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -15,5 +17,15 @@ impl Solution {
             }
         }
         max
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_2441(){
+        assert_eq!(Solution::find_max_k(vec![1,2,3,4]),-1);
+        assert_eq!(Solution::find_max_k(vec![3,2,-2,5,-3]),3);
     }
 }

@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn merge_alternately(word1: String, word2: String) -> String {
         let mut result = String::new();
@@ -15,4 +17,14 @@ impl Solution {
         }
         result
     }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_1768(){
+        assert_eq!(Solution::merge_alternately("abc".to_string(),"pqr".to_string()),"apbqcr".to_string());
+        assert_eq!(Solution::merge_alternately("ab".to_string(),"pqrs".to_string()),"apbqrs".to_string());
+    }   
 }

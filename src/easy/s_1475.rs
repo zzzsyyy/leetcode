@@ -11,7 +11,7 @@ impl Solution {
             ret[e] = if stk.is_empty() {
                 *n
             } else {
-                (n - stk[stk.len() - 1])
+                n - stk[stk.len() - 1]
             };
             stk.push(n);
         }

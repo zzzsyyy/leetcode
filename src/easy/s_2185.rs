@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn prefix_count(words: Vec<String>, pref: String) -> i32 {
         let len = pref.len();
@@ -16,5 +18,20 @@ impl Solution {
         }
 
         count as i32
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_2185(){
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "a".to_string()),1);
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "b".to_string()),1);
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "ab".to_string()),0);
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "c".to_string()),1);
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "ac".to_string()),0);
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "bc".to_string()),0);
+        assert_eq!(Solution::prefix_count(vec!["a".to_string(),"b".to_string(),"c".to_string()], "abc".to_string()),0);
     }
 }

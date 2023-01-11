@@ -23,3 +23,12 @@ impl OrderedStream {
     }
 }
 
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn test_1656(){
+        assert!(OrderedStream::new(5).insert(3,"ccccc".to_string()).is_empty());
+        assert_eq!(OrderedStream::new(5).insert(1,"aaaaa".to_string()),vec!["aaaaa".to_string()]);
+    }
+}
