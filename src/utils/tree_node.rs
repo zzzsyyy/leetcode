@@ -1,11 +1,11 @@
-use std::cell::RefCell;
-use std::rc::Rc;
+pub use std::cell::RefCell;
+pub use std::rc::Rc;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: TreeLink,
+    pub right: TreeLink,
 }
 
 impl TreeNode {
@@ -18,10 +18,10 @@ impl TreeNode {
         }
     }
 }
-type TreeLink = Option<Rc<RefCell<TreeNode>>>;
+pub type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
-pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) {
-    fn get_height(root: &Option<Rc<RefCell<TreeNode>>>) -> usize {
+pub fn print_tree(root: TreeLink) {
+    fn get_height(root: &TreeLink) -> usize {
         if let Some(r) = root {
             let r = r.borrow();
             1 + get_height(&r.left.clone()).max(get_height(&r.right.clone()))
@@ -35,7 +35,7 @@ pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) {
 
     fn dfs(
         ans: &mut Vec<Vec<String>>,
-        node: &Option<Rc<RefCell<TreeNode>>>,
+        node: &TreeLink,
         deep: usize,
         lo: usize,
         hi: usize,
