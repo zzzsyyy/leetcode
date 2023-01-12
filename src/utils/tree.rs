@@ -64,7 +64,7 @@ pub fn from_vec(v: Vec<Option<i32>>) -> TreeLink {
         .iter()
         .map(|&node| {
             if node == None {
-                return None;
+                None
             } else {
                 Some(Rc::new(RefCell::new(TreeNode::new(node.unwrap()))))
             }
@@ -106,3 +106,5 @@ macro_rules! tree {
     };
     ($($e:expr,)*) => {(tree![$($e),*])};
 }
+
+pub(crate) use tree;

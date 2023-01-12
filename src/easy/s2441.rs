@@ -10,11 +10,9 @@ impl Solution {
         for &i in nums.iter() {
             if i >= 0 {
                 *m.entry(i).or_insert(0) += 1;
-            } else {
-                if let Some(_) = m.get(&-i) {
+            } else if m.get(&-i).is_some() {
                     max = max.max(-i);
                 }
-            }
         }
         max
     }

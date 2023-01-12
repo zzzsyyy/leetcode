@@ -6,7 +6,7 @@ impl Solution {
         let mut s1:Vec<char>=s1.chars().collect();
         s1.sort();
         s2.sort();
-        return s1==s2;
+        s1==s2
     }
 }
 

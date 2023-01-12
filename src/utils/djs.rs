@@ -4,11 +4,12 @@ pub struct DJSet {
     r: Vec<usize>,
 }
 
+// set bound?
 impl DJSet {
     pub fn new(n: usize) -> Self {
         Self {
-            p: (1..=n).collect::<Vec<_>>(),
-            r: vec![1; n],
+            p: (0..=n).collect::<Vec<_>>(),
+            r: vec![1; n + 1],
         }
     }
     pub fn find(&mut self, x: usize) -> usize {
@@ -20,15 +21,21 @@ impl DJSet {
             self.p[x]
         }
     }
+    /*
+    pub fn merge(&mut self, i: usize, j: usize) {
+        let idx = self.find(i);
+        self.p[idx] = self.find(j);
+    }
+    */
     pub fn merge(&mut self, i: usize, j: usize) {
         let (i, j) = (self.find(i), self.find(j));
-        if r[i] <= r[j] {
+        if self.r[i] <= self.r[j] {
             self.p[i] = j;
         } else {
             self.p[j] = i;
         }
-        if r[i] == r[j] && i != j {
-            r[j] += 1;
+        if self.r[i] == self.r[j] && i != j {
+            self.r[j] += 1;
         }
     }
 }

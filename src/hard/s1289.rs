@@ -1,4 +1,4 @@
-struct Solution {}
+struct Solution;
 
 impl Solution {
     fn min_falling_path_sum(grid: Vec<Vec<i32>>) -> i32 {
@@ -37,8 +37,9 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_1289() {
+    fn s1289() {
         let grid = vecnd![[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         assert_eq!(Solution::min_falling_path_sum(grid), 13);
+        assert_eq!(Solution::min_falling_path_sum(vecnd![[7]]), 7);
     }
 }

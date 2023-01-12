@@ -1,3 +1,5 @@
+struct Solution;
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -18,5 +20,15 @@ impl Solution {
             }
         }
         ret
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn s1224(){
+        assert_eq!(Solution::max_equal_freq(vec![2,2,1,1,5,3,3,5]), 7);
+        assert_eq!(Solution::max_equal_freq(vec![1,1,1,2,2,2,3,3,3,4,4,4,5]), 13);
     }
 }

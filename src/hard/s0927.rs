@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn three_equal_parts(arr: Vec<i32>) -> Vec<i32> {
         let cnt: i32 = arr.iter().sum();
@@ -30,5 +32,16 @@ impl Solution {
             }
         }
         [(i + len) as i32, (j + len + 1) as i32].to_vec()
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn s0927(){
+        assert_eq!(Solution::three_equal_parts(vec![1,0,1,0,1]), vec![0, 3]);
+        assert_eq!(Solution::three_equal_parts(vec![1,1,0,1,1]), vec![-1,-1]);
+        assert_eq!(Solution::three_equal_parts(vec![1,1,0,0,1]), vec![0, 2]);
     }
 }

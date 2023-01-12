@@ -43,7 +43,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_753() {
+    fn s0753() {
         assert_eq!(Solution::crack_safe(1, 2), "10");
         assert_eq!(Solution::crack_safe(2, 2), "01100");
         Solution::crack_safe(2, 3);

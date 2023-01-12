@@ -7,12 +7,12 @@ impl Solution {
         }
         let mut num1 = nums[0];
         let mut num2 = nums[0].max(nums[1]);
-        for i in 2..nums.len() {
-            let cur = (num1+nums[i]).max(num2);
+        for n in nums.iter().skip(2) {
+            let cur = (num1+n).max(num2);
             num1 = num2;
             num2 = cur;
         }
-        return num2
+        num2
     }
 }
 

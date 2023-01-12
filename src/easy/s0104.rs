@@ -1,6 +1,6 @@
 struct Solution;
 
-use crate::utils::tree_node::*;
+use crate::utils::tree::*;
 
 impl Solution {
     pub fn max_depth(root: TreeLink) -> i32 {

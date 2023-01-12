@@ -21,7 +21,7 @@ impl Solution {
                 cell[k] |= t;
             }
         }
-        return true;
+        true
     }
 }
 

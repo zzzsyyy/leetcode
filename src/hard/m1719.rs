@@ -21,15 +21,15 @@ impl Solution {
                 s ^= i as i32;
             }
         }
-        return vec![s, s ^ t];
+        vec![s, s ^ t]
     }
 }
 
 #[cfg(test)]
-mod test{
+mod tests{
     use super::Solution;
     #[test]
-    fn test_17_19(){
+    fn m1719(){
         let nums = vec![1,2,4];
         let ans = vec![3,5];
         assert_eq!(Solution::missing_two(nums),ans);

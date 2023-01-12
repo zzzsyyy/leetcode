@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn advantage_count(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         let len = nums1.len();
@@ -17,5 +19,14 @@ impl Solution {
             }
         }
         ret
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn s0870(){
+        assert_eq!(Solution::advantage_count(vec![2,7,11,15], vec![1,10,4,11]), vec![2,11,7,15]);
     }
 }

@@ -1,4 +1,6 @@
-use::collections::HashMap;
+struct Solution;
+
+use std::collections::HashMap;
 
 impl Solution {
     pub fn total_fruit(fruits: Vec<i32>) -> i32 {
@@ -17,5 +19,16 @@ impl Solution {
             ret = ret.max(j - i + 1);
         }
         ret as i32
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+
+    #[test]
+    fn s0904(){
+        assert_eq!(Solution::total_fruit(vec![1,2,1]), 3);
+        assert_eq!(Solution::total_fruit(vec![0,1,2,2]), 3);
     }
 }

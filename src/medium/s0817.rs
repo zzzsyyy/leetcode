@@ -1,3 +1,6 @@
+struct Solution;
+
+use crate::utils::list::*;
 use std::collections::HashSet;
 
 impl Solution {
@@ -26,4 +29,16 @@ impl Solution {
         }
         res
     }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+
+    #[test]
+    fn s0817(){
+        assert_eq!(Solution::num_components(list![0,1,2,3], vec![0,1,3]), 2);
+        assert_eq!(Solution::num_components(list![0,1,2,3,4], vec![0,3,1,4]), 2);
+    }
+
 }

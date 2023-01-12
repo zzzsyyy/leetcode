@@ -10,7 +10,7 @@ impl Solution {
             }
             d += 1;
         }
-        return true;
+        true
     }
 }
 

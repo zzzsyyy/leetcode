@@ -1,6 +1,6 @@
 struct Solution;
 
-use crate::utils::tree_node::*;
+use crate::utils::tree::*;
 
 impl Solution {
     fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {

@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn at_most_n_given_digit_set(digits: Vec<String>, n: i32) -> i32 {
         let m = digits.len();
@@ -28,5 +30,16 @@ impl Solution {
             }
         }
         (dp[n - 1][0] + dp[n - 1][1]) as i32
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn s0902(){
+        assert_eq!(Solution::at_most_n_given_digit_set(vecstring!["1","3","5","7"], 100), 20);
+        assert_eq!(Solution::at_most_n_given_digit_set(vecstring!["1","4","9"], 1000000000), 29523);
+        assert_eq!(Solution::at_most_n_given_digit_set(vecstring!["7"], 8), 1);
     }
 }

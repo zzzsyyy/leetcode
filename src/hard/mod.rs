@@ -1,3 +1,11 @@
-mod s_1289;
-mod s_17_19;
-mod s_753;
+mod m1719;
+mod s0753;
+mod s0782;
+mod s0793;
+mod s0801;
+mod s0902;
+mod s0927;
+mod s0940;
+mod s1224;
+mod s1235;
+mod s1289;

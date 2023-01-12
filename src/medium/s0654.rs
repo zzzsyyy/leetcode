@@ -1,6 +1,6 @@
 struct Solution;
 
-use crate::utils::tree_node::*;
+use crate::utils::tree::*;
 
 impl Solution {
     pub fn construct_maximum_binary_tree(nums: Vec<i32>) -> TreeLink {
@@ -16,9 +16,9 @@ impl Solution {
             let root = Rc::new(RefCell::new(TreeNode::new(max)));
             root.borrow_mut().left = max_tree(nums, l, cur - 1);
             root.borrow_mut().right = max_tree(nums, cur + 1, r);
-            return Some(root);
+            Some(root)
         }
-        return max_tree(&nums, 0, nums.len() as i32 - 1);
+        max_tree(&nums, 0, nums.len() as i32 - 1)
     }
 }
 

@@ -1,6 +1,6 @@
 struct Solution;
 
-use crate::utils::tree_node::*;
+use crate::utils::tree::*;
 
 impl Solution {
     pub fn print_tree(root: TreeLink) -> Vec<Vec<String>> {

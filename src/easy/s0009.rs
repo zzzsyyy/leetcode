@@ -12,7 +12,7 @@ impl Solution {
             y = y * 10 + x % 10;
             x /= 10;
         }
-        return num == y;
+        num == y
     }
 }
 
@@ -26,7 +26,7 @@ impl Solution {
             y = y * 10 + x % 10;
             x /= 10;
         }
-        return x == y || x == y / 10;
+        x == y || x == y / 10
     }
 }
 

@@ -9,7 +9,7 @@ impl Solution {
         if let Some(r)=s2.find(&s1){
             return true;
         }
-        return false;
+        false
     }
 }
 

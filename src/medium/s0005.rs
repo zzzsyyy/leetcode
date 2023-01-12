@@ -102,9 +102,8 @@ struct Solution;
 // Manacher 方法
 impl Solution {
     pub fn longest_palindrome(s: String) -> String {
-        let v: Vec<char> = s.chars().collect();
-        let n = v.len();
-        fn manacher_preprocess(s: &String) -> Vec<char> {
+        let n = s.chars().count();
+        fn manacher_preprocess(s: &str) -> Vec<char> {
             let mut v: Vec<char> = vec!['|'];
             for c in s.chars() {
                 v.push(c);
@@ -113,7 +112,7 @@ impl Solution {
             v
         }
 
-        fn manacher(v: &Vec<char>, n: usize) -> (usize, usize) {
+        fn manacher(v: &[char], n: usize) -> (usize, usize) {
             let mut p: Vec<usize> = vec![1; n];
             let (mut max, mut idx) = (0, 0);
             let (mut l, mut r) = (0, 0);

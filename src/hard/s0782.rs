@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn moves_to_chessboard(board: Vec<Vec<i32>>) -> i32 {
         fn count(vec: &Vec<i32>) -> i32 {
@@ -30,17 +32,28 @@ impl Solution {
         let mut row = &board[0];
         for line in board.iter() {
             if line != row && line != &row.iter().map(|&x| 1 - x).collect::<Vec<_>>() {
-                return -1;
+                return -1
             } else {
                 col.push((line == row) as i32);
             }
         }
         let ret_col = count(&col);
-        let ret_row = count(&row);
+        let ret_row = count(row);
         if ret_col < 0 || ret_row < 0 {
             -1
         } else {
             ret_row + ret_col
         }
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+    #[test]
+    fn s0782(){
+        assert_eq!(Solution::moves_to_chessboard(vecnd![[0,1,1,0],[0,1,1,0],[1,0,0,1],[1,0,0,1]]), 2);
+        assert_eq!(Solution::moves_to_chessboard(vecnd![[0, 1], [1, 0]]), 0);
+        assert_eq!(Solution::moves_to_chessboard(vecnd![[1, 0], [1, 0]]), -1);
     }
 }

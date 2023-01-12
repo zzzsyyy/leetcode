@@ -1,3 +1,5 @@
+struct Solution;
+
 impl Solution {
     pub fn min_falling_path_sum(matrix: Vec<Vec<i32>>) -> i32 {
         let n = matrix.len();
@@ -16,5 +18,16 @@ impl Solution {
             }
         }
         *dp[(n - 1) & 1].iter().min().unwrap()
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+
+    #[test]
+    fn s0931(){
+        assert_eq!(Solution::min_falling_path_sum(vecnd![[2,1,3],[6,5,4],[7,8,9]]), 13);
+        assert_eq!(Solution::min_falling_path_sum(vecnd![[1,2,3],[4,5,6],[7,8,9]]), 12);
     }
 }

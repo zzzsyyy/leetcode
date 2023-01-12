@@ -2,7 +2,7 @@ struct Solution;
 
 impl Solution {
     pub fn decrypt(code: Vec<i32>, k: i32) -> Vec<i32> {
-        let kk = k.abs() as usize;
+        let kk = k.unsigned_abs() as usize;
         let len = code.len();
         let mut ret = vec![0; len];
         if k == 0 {

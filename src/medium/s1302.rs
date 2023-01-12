@@ -1,9 +1,10 @@
-use std::rc::Rc;
-use std::cell::RefCell;
-use std::collections::VecDeque;
+struct Solution;
+
+use crate::utils::tree::*;
+
 impl Solution {
-    pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut queue = VecDeque::new();
+    pub fn deepest_leaves_sum(root: TreeLink) -> i32 {
+        let mut queue = std::collections::VecDeque::new();
         let root_rc = root.unwrap();
         queue.push_back(root_rc);
         let mut sum = 0;
@@ -22,5 +23,16 @@ impl Solution {
             }
     }
     sum
+    }
+}
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+
+    #[test]
+    fn s1302(){
+        assert_eq!(Solution::deepest_leaves_sum(tree![1,2,3,4,5,null,6,7,null,null,null,null,8]), 15);
+        assert_eq!(Solution::deepest_leaves_sum(tree![6,7,8,2,7,1,3,9,null,1,4,null,null,null,5]), 19);
     }
 }
