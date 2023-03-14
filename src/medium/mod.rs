@@ -26,6 +26,7 @@ mod s0946;
 mod s1302;
 mod s1441;
 mod s1590;
+mod s1605;
 mod s1658;
 mod s1806;
 mod s2381;
