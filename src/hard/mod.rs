@@ -9,3 +9,4 @@ mod s0940;
 mod s1224;
 mod s1235;
 mod s1289;
+mod s2488;
