@@ -22,4 +22,5 @@ mod s1800;
 mod s2185;
 mod s2379;
 mod s2383;
+mod s2389;
 mod s2441;
