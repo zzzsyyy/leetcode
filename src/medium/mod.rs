@@ -1,4 +1,5 @@
 mod m0108;
+mod s0003;
 mod s0005;
 mod s0007;
 mod s0036;
@@ -13,6 +14,7 @@ mod s0779;
 mod s0788;
 // mod s0811; compare two vec
 mod m1705;
+mod s0015;
 mod s0209;
 mod s0817;
 mod s0856;
@@ -24,12 +26,14 @@ mod s0915;
 mod s0921;
 mod s0931;
 mod s0946;
+mod s1234;
 mod s1302;
 mod s1441;
 mod s1590;
 mod s1605;
 mod s1615;
 mod s1616;
+mod s1626;
 mod s1658;
 mod s1806;
 mod s2381;
